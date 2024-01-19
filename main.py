@@ -147,7 +147,6 @@ class WeatherStatsCurrent(ctk.CTkFrame):
         self.current_weather_image = self.weather_image(self.current_weather_data['icon'], size = (300, 300))
         self.weather_icon = ctk.CTkLabel(master = self, image = self.current_weather_image, text = "")
         self.weather_icon.place(relx = 0.25, rely = 0.5, anchor = 'center')
-        print(self.current_weather_data)
         
         # Get the current time
         current_time = datetime.datetime.now()
