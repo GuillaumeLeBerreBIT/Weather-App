@@ -2,9 +2,11 @@
 
 This is a simple weather application built using Python and the Tkinter library for the graphical user interface. The app fetches current weather data and a 5-day forecast at 12:00 UTC for a specified location using the OpenWeatherMap API.
 
+You can make use from my API token to get weather data since it is from a free subscription and only served purpose to build this app. Can always change the API key and other parameters in the JSON file provided. 
+
 ## Preview
 
-![App](Weather_App_Preview.png)
+![App](graphics/Weather_App_Preview.png)
 
 ## Requirements
 

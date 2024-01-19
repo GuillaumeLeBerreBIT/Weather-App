@@ -95,7 +95,7 @@ class CurrentWeatherFrame(ctk.CTkFrame):
         # How to add an image onto the window
         self.canvas_for_image = tk.Canvas(master = self, bg = 'white', width = 1200, height = 400, highlightthickness = 0)
         self.canvas_for_image.pack()
-        self.bg_downl = Image.open('sky_full_stars.jpg')
+        self.bg_downl = Image.open('graphics/sky_full_stars.jpg')
         self.canvas_for_image.image = ImageTk.PhotoImage(self.bg_downl.resize((1200, 1200), Image.Resampling.LANCZOS))
         self.canvas_for_image.create_image(0, 0, image = self.canvas_for_image.image, anchor='nw')
         
@@ -119,7 +119,7 @@ class CurrentWeatherFrame(ctk.CTkFrame):
         
         # Add a button to search tho location
         # Use a lambda command so can keep calling the function each time when pressing a button
-        self.search_button_image = ImageTk.PhotoImage(Image.open('search.png').resize((50,50), Image.Resampling.LANCZOS))
+        self.search_button_image = ImageTk.PhotoImage(Image.open('graphics/search.png').resize((50,50), Image.Resampling.LANCZOS))
         self.search_button = tk.Button(master = self, 
                                            text = '', 
                                            image = self.search_button_image, 
