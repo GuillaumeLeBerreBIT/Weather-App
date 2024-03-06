@@ -21,7 +21,7 @@ class WeatherGUI(ctk.CTk):
         self.geometry("1200x700")
         # Function do not call it yet
         self.city_names_to_lat_long = city_names_to_lat_long
-        # Get the data from the Weather API
+        # Get the data from the Weather API >> By default using my hometown
         self.current_weather_data, self.forecast_weather_data = self.city_names_to_lat_long('Oostende')
         
         ## FRAME 1 >> Current weather data
@@ -158,7 +158,7 @@ class WeatherStatsCurrent(ctk.CTkFrame):
                                            corner_radius = 32,
                                            height = 53,
                                            font = (None, 48, 'bold'))
-        self.curr_label.place(relx = 0.25, rely = 0.15, anchor = 'center')
+        self.curr_label.place(relx = 0.27, rely = 0.15, anchor = 'center')
        
         # Label with the temperature
         self.temperature_label = ctk.CTkLabel(master = self, 
@@ -166,14 +166,14 @@ class WeatherStatsCurrent(ctk.CTkFrame):
                                            fg_color = 'transparent',
                                            text_color = 'white',
                                            font = (None, 48, 'bold'))
-        self.temperature_label.place(relx = 0.7, rely = 0.15, anchor = 'center')
+        self.temperature_label.place(relx = 0.75, rely = 0.15, anchor = 'center')
         
         self.description_label = ctk.CTkLabel(master = self,
                                               text = f'{self.current_weather_data["description"].title()}',
                                               fg_color = 'transparent',
                                               text_color = 'white',
                                               font = (None, 36, 'bold'))
-        self.description_label.place(relx = 0.7, rely = 0.3, anchor = 'center')
+        self.description_label.place(relx = 0.75, rely = 0.3, anchor = 'center')
         
         self.temp_min_max_label = ctk.CTkLabel(master = self, 
                                             text = f'Max: {self.current_weather_data["max_temp"]} °C\n Min: {self.current_weather_data["min_temp"]} °C',
@@ -183,7 +183,7 @@ class WeatherStatsCurrent(ctk.CTkFrame):
                                             width = 250, 
                                             font = (None, 22, 'bold'),
                                             height = 50)       
-        self.temp_min_max_label.place(relx = 0.7, rely = 0.45, anchor = 'center') 
+        self.temp_min_max_label.place(relx = 0.75, rely = 0.45, anchor = 'center') 
         
         self.wind_direction = mpcalc.angle_to_direction(self.current_weather_data["wind_degree"])
         
@@ -194,7 +194,7 @@ class WeatherStatsCurrent(ctk.CTkFrame):
                                                 corner_radius = 32,
                                                 width = 250,
                                                 font = (None, 22, 'bold'))
-        self.wind_direction_label.place(relx = 0.7, rely = 0.6, anchor = 'center')
+        self.wind_direction_label.place(relx = 0.75, rely = 0.6, anchor = 'center')
         
         self.visibility_label = ctk.CTkLabel(master = self,
                                                 text = f'Visibility: {self.current_weather_data["visibility"] // 1000} Km',
@@ -203,7 +203,7 @@ class WeatherStatsCurrent(ctk.CTkFrame):
                                                 corner_radius = 32,
                                                 width = 250,
                                                 font = (None, 22, 'bold'))
-        self.visibility_label.place(relx = 0.7, rely = 0.7, anchor = 'center')
+        self.visibility_label.place(relx = 0.75, rely = 0.7, anchor = 'center')
 
         self.rain_label = ctk.CTkLabel(master = self,
                                                 text = f'Rain: {self.current_weather_data["rain"]} mm',
@@ -212,7 +212,7 @@ class WeatherStatsCurrent(ctk.CTkFrame):
                                                 corner_radius = 32,
                                                 width = 250,
                                                 font = (None, 22, 'bold'))
-        self.rain_label.place(relx = 0.7, rely = 0.8, anchor = 'center')
+        self.rain_label.place(relx = 0.75, rely = 0.8, anchor = 'center')
         
         
     def update_stats(self, current_weather_data):
